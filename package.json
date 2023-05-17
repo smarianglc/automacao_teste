@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/smarianglc/automacao_teste/issues"
   },
-  "homepage": "https://github.com/smarianglc/automacao_teste#readme"
+  "homepage": "https://github.com/smarianglc/automacao_teste#readme",
+  "dependencies": {
+    "cypress": "^12.12.0"
+  }
 }
