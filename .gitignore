@@ -1,5 +1,5 @@
-node_modules
-package-lock.json
-videos
-screencshots
-reports
+.node_modules
+.package-lock.json
+.videos
+.screencshots
+.reports
