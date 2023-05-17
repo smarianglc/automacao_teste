@@ -1,0 +1,19 @@
+{
+  "name": "projeto-testes-automatizados",
+  "version": "1.0.0",
+  "description": "projeto com cypress testes automatizados de websites",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/smarianglc/automacao_teste.git"
+  },
+  "author": "Maria Angelica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smarianglc/automacao_teste/issues"
+  },
+  "homepage": "https://github.com/smarianglc/automacao_teste#readme"
+}
