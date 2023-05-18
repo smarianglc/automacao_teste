@@ -18,5 +18,8 @@
   "homepage": "https://github.com/smarianglc/automacao_teste#readme",
   "dependencies": {
     "cypress": "^12.12.0"
+  },
+  "devDependencies": {
+    "mochawesome": "^7.1.3"
   }
 }
