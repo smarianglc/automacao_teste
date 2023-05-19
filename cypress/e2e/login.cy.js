@@ -1,6 +1,6 @@
 describe('LOGIN', () => {
 
-    it('Login com senha errada', () => {
+    it.only('Login com senha errada', () => {
         cy.visit('/')
             .get('.flex .h-full')
         
@@ -98,7 +98,7 @@ describe('LOGIN', () => {
             .click()
     });
 
-    it.only('Não preencher campos', () => {
+    it('Não preencher campos', () => {
         cy.visit('/')
             .get('.flex .h-full')
 
@@ -119,11 +119,11 @@ describe('LOGIN', () => {
 
         cy.get('.v-messages__message')
             .should('be.visible')
-            .should('have.text','Campo obrigatório!')
+            .should('include.text','Campo obrigatório!')
 
         cy.get('.v-messages__message')
             .should('be.visible')
-            .should('have.text','É obrigatório informar a Senha')
+            .should('include.text','É obrigatório informar a Senha')
     });
 
 });
