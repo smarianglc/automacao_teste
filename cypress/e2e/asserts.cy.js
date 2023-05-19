@@ -22,6 +22,8 @@ describe('LOGIN', () => {
         cy.get('.texto-descricao')
             .should('be.visible')
             .should('include.text',' Entre ou cadastre-se para participar!')
+
+        cy.get()
     });
 
 

@@ -1,6 +1,11 @@
 describe('LOGIN', () => {
 
-    it.only('Login com senha errada', () => {
+    const user_cpf = '02792595140'
+    const user_senha = '16184321'
+    const user_cpf_invalido = '02792432189'
+    const user_senha_invalida = '16180000'
+
+    it('Login com senha errada', () => {
         cy.visit('/')
             .get('.flex .h-full')
         
@@ -17,11 +22,11 @@ describe('LOGIN', () => {
         //FORMULARIO DE LOGIN
         cy.get('input[name="cpf"]')
             .click()
-            .type('02792595140') 
+            .type(user_cpf) 
         
         cy.get('input[name="senha"]')
             .click()
-            .type('1618222222')
+            .type(user_senha_invalida)
 
         cy.get('.v-btn__content')
             .contains('Entrar')
@@ -55,7 +60,7 @@ describe('LOGIN', () => {
         //FORMULARIO DE LOGIN
         cy.get('input[name="cpf"]')
             .click()
-            .type('02792432189') 
+            .type(user_cpf_invalido) 
 
         cy.get('.v-messages__message')
             .should('be.visible')
@@ -63,7 +68,7 @@ describe('LOGIN', () => {
 
         cy.get('input[name="senha"]')
             .click()
-            .type('16184321')
+            .type(user_senha)
 
         cy.get('.v-btn__content')
             .contains('Entrar')
@@ -87,11 +92,11 @@ describe('LOGIN', () => {
         //FORMULARIO DE LOGIN
         cy.get('input[name="cpf"]')
             .click()
-            .type('02792595140')
+            .type(user_cpf)
         
         cy.get('input[name="senha"]')
             .click()
-            .type('16184321')
+            .type(user_senha)
 
         cy.get('.v-btn__content')
             .contains('Entrar')
