@@ -1,9 +1,8 @@
-describe('LOGIN', () => {
+///<reference types="cypress" />
+import faker from 'faker-br'
 
-    const user_cpf = '02792595140'
-    const user_senha = '16184321'
-    const user_cpf_invalido = '02792432189'
-    const user_senha_invalida = '16180000'
+const user_data = require('../fixtures/user_login.json')
+describe('LOGIN', () => {
 
     it('Login com senha errada', () => {
         cy.visit('/')
@@ -22,11 +21,11 @@ describe('LOGIN', () => {
         //FORMULARIO DE LOGIN
         cy.get('input[name="cpf"]')
             .click()
-            .type(user_cpf) 
+            .type(user_data.user_cpf) 
         
         cy.get('input[name="senha"]')
             .click()
-            .type(user_senha_invalida)
+            .type(user_data.user_senha_invalida)
 
         cy.get('.v-btn__content')
             .contains('Entrar')
@@ -43,7 +42,7 @@ describe('LOGIN', () => {
 
     });
     
-    it('Login com cpf errado', () => {
+    it.only('Login com cpf errado', () => {
         cy.visit('/')
             .get('.flex .h-full')
 
@@ -60,7 +59,7 @@ describe('LOGIN', () => {
         //FORMULARIO DE LOGIN
         cy.get('input[name="cpf"]')
             .click()
-            .type(user_cpf_invalido) 
+            .type(faker.br.cpf()) 
 
         cy.get('.v-messages__message')
             .should('be.visible')
@@ -68,7 +67,7 @@ describe('LOGIN', () => {
 
         cy.get('input[name="senha"]')
             .click()
-            .type(user_senha)
+            .type(user_data.user_senha)
 
         cy.get('.v-btn__content')
             .contains('Entrar')
@@ -92,11 +91,11 @@ describe('LOGIN', () => {
         //FORMULARIO DE LOGIN
         cy.get('input[name="cpf"]')
             .click()
-            .type(user_cpf)
+            .type(user_data.user_cpf)
         
         cy.get('input[name="senha"]')
             .click()
-            .type(user_senha)
+            .type(user_data.user_senha)
 
         cy.get('.v-btn__content')
             .contains('Entrar')
