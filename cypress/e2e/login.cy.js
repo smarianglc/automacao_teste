@@ -4,7 +4,8 @@ import faker from 'faker-br'
 const user_data = require('../fixtures/user_login.json')
 describe('LOGIN', () => {
 
-    it('Login com senha errada', () => {
+    beforeEach('Acessando a página de login', () => {   
+        //ACESSANDO A PÁGINA
         cy.visit('/')
             .get('.flex .h-full')
         
@@ -15,9 +16,12 @@ describe('LOGIN', () => {
         cy.get('.ph-list-light')
             .click()
 
+        //PÁGINA DE LOGIN
         cy.contains('Entrar')
             .click()
+    });
 
+    it('Login com senha errada', () => {
         //FORMULARIO DE LOGIN
         cy.get('input[name="cpf"]')
             .click()
@@ -42,32 +46,19 @@ describe('LOGIN', () => {
 
     });
     
-    it.only('Login com cpf errado', () => {
-        cy.visit('/')
-            .get('.flex .h-full')
-
-        cy.get('.text-caption-lg')
-            .contains('DEMO')
-
-        //MENU 
-        cy.get('.ph-list-light')
-            .click()
-
-        cy.contains('Entrar')
-            .click()
-
+    it('Login com cpf errado', () => {
         //FORMULARIO DE LOGIN
         cy.get('input[name="cpf"]')
             .click()
-            .type(faker.br.cpf()) 
-
-        cy.get('.v-messages__message')
-            .should('be.visible')
-            .should('have.text','CPF Inválido!')
+            .type(user_data.user_cpf_invalido) 
 
         cy.get('input[name="senha"]')
             .click()
             .type(user_data.user_senha)
+
+        cy.get('.v-messages__message')
+            .should('be.visible')
+            .should('have.text','CPF Inválido!')
 
         cy.get('.v-btn__content')
             .contains('Entrar')
@@ -75,19 +66,6 @@ describe('LOGIN', () => {
     });
 
     it('Login com sucesso', () => {
-        cy.visit('/')
-            .get('.flex .h-full')
-        
-        //MENU
-        cy.get('.text-caption-lg')
-            .contains('DEMO')    
-
-        cy.get('.ph-list-light')
-            .click()
-
-        cy.contains('Entrar')
-            .click()
-
         //FORMULARIO DE LOGIN
         cy.get('input[name="cpf"]')
             .click()
@@ -103,19 +81,6 @@ describe('LOGIN', () => {
     });
 
     it('Não preencher campos', () => {
-        cy.visit('/')
-            .get('.flex .h-full')
-
-        cy.get('.text-caption-lg')
-            .contains('DEMO')
-
-        //MENU
-        cy.get('.ph-list-light')
-            .click()
-
-        cy.contains('Entrar')
-            .click()
-
         //FORMULARIO DE LOGIN
         cy.get('.v-btn__content')
             .contains('Entrar')
