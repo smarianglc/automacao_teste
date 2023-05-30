@@ -1,14 +1,15 @@
 ///<reference types="cypress" />
 import faker from 'faker-br'
+import home_page from '../support/pages/home_page';
 
 const user_data = require('../fixtures/user_login.json')
 describe('LOGIN', () => {
 
     beforeEach('Acessando a página de login', () => {   
-        cy.acessarPaginaLogin()
+        home_page.acessarPaginaLogin()
     });
 
-    it('Login com senha errada', () => {
+    it.only('Login com senha errada', () => {
         cy.preencherCPF(user_data.user_cpf)
         cy.preencherSenha(user_data.user_senha_invalida)
         cy.fazerLogin()

@@ -1,5 +1,7 @@
+///<reference types="cypress" />
 
-Cypress.Commands.add('acessarPaginaLogin', () => { 
+export default{
+    acessarPaginaLogin() {
         //ACESSANDO A PÁGINA
         cy.visit('/')
             .get('.flex .h-full')
@@ -14,4 +16,5 @@ Cypress.Commands.add('acessarPaginaLogin', () => {
         //PÁGINA DE LOGIN
         cy.contains('Entrar')
             .click()
-})
+    }
+}
