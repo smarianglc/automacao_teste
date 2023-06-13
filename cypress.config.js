@@ -1,12 +1,17 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: '6dk6i6',
+  projectId: '18wc2c',
   e2e: {
     baseUrl:'https://hom-prod-20.playservicos.com.br/',
-    "reporter": "mochawesome",
+    reporter: 'cypress-mochawesome-reporter',
+    setupNodeEvents(on, config){
+      require('cypress-mochawesome-reporter/plugin')(on);
+    },
     "reporterOptions":{
-        "reportDir": "cypress/reports/mochawesome-report",
+        "charts": true, 
+        "reportTitle": 'Projeto para entender melhor',
+        "reportDir": "cypress/reports/mochawesome-report", //futuramente posso retirar
         "overwrite": true,
         "html": true,
         "json": false,

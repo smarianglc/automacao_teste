@@ -15,7 +15,7 @@ screens.forEach((element) => {
             home_page.acessarPaginaLogin()
         });
     
-        it.only('Login com senha errada', () => {
+        it('Login com senha errada', () => {
             cy.preencherCPF(user_data.user_cpf)
             cy.preencherSenha(user_data.user_senha_invalida)
             cy.fazerLogin()

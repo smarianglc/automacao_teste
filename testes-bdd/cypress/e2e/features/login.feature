@@ -1,6 +1,6 @@
 # 1 PASSO - Criar os cenários 
 Feature: Login
-    Eu como cliente
+    comoEu  cliente
     Quero fazer Login na aplicação 
     Para fazer uma compra
 

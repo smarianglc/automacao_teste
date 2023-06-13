@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 describe('LOGIN', () => {
 
-    it.only('Verificar elemento visivel', () => {
+    it('Verificar elemento visivel', () => {
         cy.visit('/')
             .get('.flex .h-full')
         
