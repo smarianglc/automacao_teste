@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
       #exemplo de execucao no terminal
       - name: Run testes
-        user: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v5
         with:
           record: true
         env:
