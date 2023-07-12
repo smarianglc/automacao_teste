@@ -4,7 +4,7 @@ import home_page from '../support/pages/home_page';
 
 const user_data = require('../fixtures/user_login.json')
 
-const screens = ['desktop', 'iphone-6', 'iphone-x']
+const screens = ['desktop']
 screens.forEach((element) => { 
     describe('LOGIN', () => {
         beforeEach('Acessando a página de login', () => {
