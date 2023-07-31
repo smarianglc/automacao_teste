@@ -19,11 +19,11 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^17.2.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "cypress": "^12.17.0",
     "faker-br": "^0.4.1"
   },
   "devDependencies": {
-    "cypress-mochawesome-reporter": "^3.5.0",
+    "cypress": "^12.17.2",
+    "cypress-mochawesome-reporter": "^3.5.1",
     "mochawesome": "^7.1.3"
   }
 }
