@@ -4,7 +4,7 @@ export default{
     acessarPaginaLogin() {
         //ACESSANDO A PÁGINA
         cy.visit('/')
-            .get('.flex .h-full')
+            .get('.ph-list-light')
         
         cy.get('.text-caption-lg')
             .contains('DEMO')    
