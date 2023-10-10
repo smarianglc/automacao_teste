@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const {GoogleSocialLogin} = require('cypress-social-logins').plugins
 
 module.exports = defineConfig({
   projectId: '18wc2c',
@@ -7,6 +8,9 @@ module.exports = defineConfig({
     reporter: 'cypress-mochawesome-reporter',
     setupNodeEvents(on, config){
       require('cypress-mochawesome-reporter/plugin')(on);
+      on('task', {
+        GoogleSocialLogin: GoogleSocialLogin,
+      })
     },
     "reporterOptions":{
         "charts": true, 
