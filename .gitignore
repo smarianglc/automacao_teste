@@ -5,6 +5,5 @@ cypress.config.js
 videos
 screenshots
 reports
-support
 fixtures
 downloads
