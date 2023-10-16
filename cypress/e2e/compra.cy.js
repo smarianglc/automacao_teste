@@ -6,7 +6,7 @@ describe("TELA DE COMPRAS", () => {
         cy.preencherCampoCPF(usuario_dado.user_cpf)
         cy.preencherCampoSenha(usuario_dado.user_senha)
         cy.fazerLogin()
-        cy.url()
+        cy.url().should('include', '/comprar')
     })
 
     it("Realizar compra com saldo", () => {
