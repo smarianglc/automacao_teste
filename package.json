@@ -22,6 +22,7 @@
     "faker-br": "^0.4.1"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^10.0.0",
     "cypress": "^12.17.2",
     "cypress-localstorage-commands": "^2.2.4",
     "cypress-mochawesome-reporter": "^3.5.1",
