@@ -1,15 +1,15 @@
 const { defineConfig } = require("cypress");
-const {GoogleSocialLogin} = require('cypress-social-logins').plugins
+//const {GoogleSocialLogin} = require('cypress-social-logins').plugins
 
 module.exports = defineConfig({
   projectId: '18wc2c',
   e2e: {
-    baseUrl:'https://hom-prod-20.playservicos.com.br',
+    baseUrl:'https://hom-loja20.playdepremios.com.br',
     reporter: 'cypress-mochawesome-reporter',
     setupNodeEvents(on, config){
       require('cypress-mochawesome-reporter/plugin')(on);
       on('task', {
-        GoogleSocialLogin: GoogleSocialLogin,
+       // GoogleSocialLogin: GoogleSocialLogin,
       })
     },
     "reporterOptions":{

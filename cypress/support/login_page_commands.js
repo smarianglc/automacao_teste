@@ -60,3 +60,17 @@ Cypress.Commands.add('campoObrigatorio', (mensagem) => {
         .should('be.visible')
         .should('include.text',mensagem)
 });
+
+Cypress.Commands.add('realizarLogin', (cpf, senha) => {
+    cy.get(elements.filds.campoCPF)
+        .click()
+        .type(cpf)
+
+    cy.get(elements.filds.campoSenha)
+        .click()
+        .type(senha)
+    
+    cy.get(elements.buttons.botaoEntrar)
+        .contains('Entrar')
+        .click()
+})
